@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Play Rock Paper Scissors{% endblock %}
+
+{% block heading %}Rock Paper Scissors{% endblock %}
+
+{% block content %}
+<form action="{% url 'play_game' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" name="choice" value="rock">Rock</button>
+    <button type="submit" name="choice" value="paper">Paper</button>
+    <button type="submit" name="choice" value="scissors">Scissors</button>
+</form>
+{% endblock %}
